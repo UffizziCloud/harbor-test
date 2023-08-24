@@ -240,7 +240,7 @@ jobs:
             push: true
             tags: ${{ steps.meta.outputs.tags }}
             labels: ${{ steps.meta.outputs.labels }}
-            file: ./make/photon/core/Dockerfile
+            file: ./make/photon/db/Dockerfile
             context: .
             build-args: |
               harbor_base_image_version=dev
