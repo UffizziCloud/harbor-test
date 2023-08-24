@@ -295,7 +295,7 @@ jobs:
             repository: goharbor/harbor
         - name: Build binary
           run: |
-            cd ./make/photon/trivy-adapter/ && ./make/photon/trivy-adapter/builder.sh v0.30.15 && cd -;
+            cd ./make/photon/trivy-adapter/ && ./builder.sh v0.30.15 && cd -;
         - name: Build DB
           run: |
             make build -e BUILDTARGET="_build_trivy_adapter"
