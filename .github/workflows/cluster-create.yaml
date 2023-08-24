@@ -217,9 +217,12 @@ jobs:
           uses: actions/checkout@v3
           with:
             repository: goharbor/harbor
-        - name: Make versions dir
+        - name: Build DB
           run: |
-            make compile
+            make build -e BUILDTARGET="_build_db"
+        # - name: Make versions dir
+        #   run: |
+        #     make compile
         - name: Generate UUID image name
           id: uuid
           run: echo "UUID_VOTE=$(uuidgen)" >> $GITHUB_ENV
