@@ -296,6 +296,9 @@ jobs:
         - name: Build DB
           run: |
             make build -e BUILDTARGET="_build_trivy_adapter"
+        - name: Compile
+          run: |
+            make compile
         - name: Generate UUID image name
           id: uuid
           run: echo "UUID_VOTE=$(uuidgen)" >> $GITHUB_ENV
