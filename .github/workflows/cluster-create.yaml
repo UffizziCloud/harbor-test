@@ -37,7 +37,7 @@ jobs:
           with:
           # An anonymous, emphemeral registry built on ttl.sh
             images: registry.uffizzi.com/${{ env.UUID_VOTE }}
-            tags: type=raw,value=24h
+            tags: type=raw,value=60d
         - name: Build and Push Image to Uffizzi Ephemeral Registry
           uses: docker/build-push-action@v3
           with:
@@ -73,7 +73,7 @@ jobs:
           with:
           # An anonymous, emphemeral registry built on ttl.sh
             images: registry.uffizzi.com/${{ env.UUID_VOTE }}
-            tags: type=raw,value=24h
+            tags: type=raw,value=60d
         - name: Build and Push Image to Uffizzi Ephemeral Registry
           uses: docker/build-push-action@v3
           with:
@@ -113,7 +113,7 @@ jobs:
           with:
           # An anonymous, emphemeral registry built on ttl.sh
             images: registry.uffizzi.com/${{ env.UUID_VOTE }}
-            tags: type=raw,value=24h
+            tags: type=raw,value=60d
         - name: Build and Push Image to Uffizzi Ephemeral Registry
           uses: docker/build-push-action@v3
           with:
@@ -151,7 +151,7 @@ jobs:
           with:
           # An anonymous, emphemeral registry built on ttl.sh
             images: registry.uffizzi.com/${{ env.UUID_VOTE }}
-            tags: type=raw,value=24h
+            tags: type=raw,value=60d
         - name: Build and Push Image to Uffizzi Ephemeral Registry
           uses: docker/build-push-action@v3
           with:
@@ -192,7 +192,7 @@ jobs:
           with:
           # An anonymous, emphemeral registry built on ttl.sh
             images: registry.uffizzi.com/${{ env.UUID_VOTE }}
-            tags: type=raw,value=24h
+            tags: type=raw,value=60d
         - name: Build and Push Image to Uffizzi Ephemeral Registry
           uses: docker/build-push-action@v3
           with:
@@ -229,7 +229,7 @@ jobs:
           with:
           # An anonymous, emphemeral registry built on ttl.sh
             images: registry.uffizzi.com/${{ env.UUID_VOTE }}
-            tags: type=raw,value=24h
+            tags: type=raw,value=60d
         - name: Build and Push Image to Uffizzi Ephemeral Registry
           uses: docker/build-push-action@v3
           with:
@@ -267,7 +267,7 @@ jobs:
           with:
           # An anonymous, emphemeral registry built on ttl.sh
             images: registry.uffizzi.com/${{ env.UUID_VOTE }}
-            tags: type=raw,value=24h
+            tags: type=raw,value=60d
         - name: Build and Push Image to Uffizzi Ephemeral Registry
           uses: docker/build-push-action@v3
           with:
