@@ -442,11 +442,7 @@ jobs:
 
             helm repo add kubeshop https://kubeshop.github.io/helm-charts
 
-            if $(helm ls | grep -q my-testkube); then
-              helm upgrade --install my-testkube kubeshop/testkube
-            else
-              helm install my-testkube kubeshop/testkube
-            fi
+            helm upgrade --install my-testkube kubeshop/testkube
 
             sleep 10
         - name: Create Ingress for Testkube
