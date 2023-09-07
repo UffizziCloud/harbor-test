@@ -307,7 +307,7 @@ jobs:
           with:
             issue-number: ${{ github.event.pull_request.number }}
             comment-author: "github-actions[bot]"
-            body-includes: pr-${{ github.event.pull_request.number }}
+            body-includes: pr-${{ github.event.pull_request.number }}-x
             direction: last
 
         # Create/Update comment with action deployment status
@@ -331,7 +331,7 @@ jobs:
         - name: Connect to Virtual Cluster
           uses: UffizziCloud/cluster-action@main
           with:
-            cluster-name: pr-${{ github.event.pull_request.number }}
+            cluster-name: pr-${{ github.event.pull_request.number }}-x
             server: https://app.qa-gke.uffizzi.com/
 
         # Create/Update comment with action deployment status
@@ -343,15 +343,15 @@ jobs:
             body: |
                 ## Uffizzi Ephemeral Environment - Virtual Cluster
         
-                Your cluster `pr-${{ github.event.pull_request.number }}` was successfully created. Learn more about [Uffizzi virtual clusters](https://docs.uffizzi.com/virtual-clusters)
+                Your cluster `pr-${{ github.event.pull_request.number }}-x` was successfully created. Learn more about [Uffizzi virtual clusters](https://docs.uffizzi.com/virtual-clusters)
                 To connect to this cluster, follow these steps:
         
                 1. Download and install the Uffizzi CLI from https://docs.uffizzi.com/install
                 2. Login to Uffizzi: `uffizzi login`
-                3. Update your kubeconfig: `uffizzi cluster update-kubeconfig pr-${{ github.event.pull_request.number }}`. This command will update your local `~/.kube/config`.
+                3. Update your kubeconfig: `uffizzi cluster update-kubeconfig pr-${{ github.event.pull_request.number }}-x`. This command will update your local `~/.kube/config`.
                 If you want to provide an alternate location follow the optional step (the next step) instead.
         
-                    Optional: Update your kubeconfig: `uffizzi cluster update-kubeconfig pr-${{ github.event.pull_request.number }} --kubeconfig=[KUBECONFIG]`, replacing `[KUBECONFIG]` with the path to your kubeconfig file.
+                    Optional: Update your kubeconfig: `uffizzi cluster update-kubeconfig pr-${{ github.event.pull_request.number }}-x --kubeconfig=[KUBECONFIG]`, replacing `[KUBECONFIG]` with the path to your kubeconfig file.
                 After updating your kubeconfig, you can manage your cluster with `kubectl`, `kustomize`, `helm`, and other tools that use kubeconfig files: `kubectl get namespace --kubeconfig [KUBECONFIG]`
         
             edit-mode: replace
@@ -514,7 +514,7 @@ jobs:
           uses: peter-evans/create-or-update-comment@v2
           with:
             comment-id: ${{ needs.uffizzi-cluster.harbor_notify.outputs.comment-id }}
-            issue-number: ${{ github.event.pull_request.number }}
+            issue-number: ${{ github.event.pull_request.number }}-x
             body: |
                 ---
                   Check out Testkube at -- https://${{ steps.test.outputs.TK_DASHBOARD }}
@@ -605,5 +605,5 @@ jobs:
             uses: UffizziCloud/cluster-action@main
             with:
               action: delete
-              cluster-name: pr-${{ github.event.pull_request.number }}
+              cluster-name: pr-${{ github.event.pull_request.number }}-x
               server: https://app.uffizzi.com/
