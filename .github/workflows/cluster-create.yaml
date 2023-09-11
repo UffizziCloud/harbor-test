@@ -332,7 +332,7 @@ jobs:
           uses: UffizziCloud/cluster-action@main
           with:
             cluster-name: pr-${{ github.event.pull_request.number }}
-            server: https://app.qa-gke.uffizzi.com/
+            server: https://app.uffizzi.com/
 
         # Create/Update comment with action deployment status
         - name: Create or Update Comment with Deployment URL
